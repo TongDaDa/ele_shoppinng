@@ -1,0 +1,186 @@
+/* `html` and `body` */
+
+/* Reset the box-sizing */
+html {
+  box-sizing: border-box;
+  /* Prevent adjustments of font size after orientation changes in IE and iOS. */
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-tap-highlight-color:rgba(0,0,0,0)
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: /* Safari for OS X and iOS (San Francisco) */
+    '-apple-system',
+      /* Chrome for OS X (San Francisco) */
+    'BlinkMacSystemFont',
+      /* Chinese font for OSX and iOS */
+    'Hiragino Sans GB',
+      /* Android */
+    'Roboto',
+      /* Windows */
+    'Segoe UI',
+      /* Chinese font for Windows */
+    'Microsoft Yahei', '微软雅黑',
+      /* Linux */
+    'Oxygen-Sans', 'Ubuntu', 'Cantarell',
+      /* Basic web fallback */
+    'Helvetica', 'Arial', 'STHeiti', sans-serif,
+      /* Emoji */
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin:0;
+}
+
+p,
+blockquote,
+table,
+hr,
+dl,
+ul,
+ol,
+pre,
+address,
+figure {
+  margin:0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  /* Remove gaps in links underline in iOS 8+ and Safari 8+. */
+  -webkit-text-decoration-skip: objects;
+  &:active,
+  &:hover {
+     color:#000;
+     text-decoration: underline;
+   }
+}
+
+b,
+strong,
+dt {
+  font-weight: normal;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+dt,
+dd,
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  /* Remove the border on images inside links in IE 10-. */
+  border-style: none;
+}
+
+/* Forms */
+
+/**
+ * iOS "clickable elements" fix for role="button"
+ *
+ * Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+ * for traditionally non-focusable elements with role="button"
+ * see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+ */
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Avoid 300ms click delay on touch devices that support the `touch-action` CSS property. */
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}
+
+button,
+  /* Prevent a WebKit bug where (*) destroys native `audio` and `video` controls in Android 4. */
+html [type=button],
+[type=reset],
+[type=submit],
+::-webkit-file-upload-button {
+  /* (*) Correct the inability to style clickable types in iOS and Safari. */
+  appearance: button;
+}
+
+[type=search] {
+  /* Correct the odd appearance in Chrome and Safari. */
+  appearance: none;
+}
+
+/* Change font properties to `inherit` in Safari. */
+::-webkit-file-upload-button {
+  font: inherit;
+}
+
+[hidden] {
+  display: none;
+}
+
+legend {
+  padding: 0 0.2em;
+}
+
+optgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+
+progress {
+  max-width: 100%;
+}

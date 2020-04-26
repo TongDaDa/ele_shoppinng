@@ -1,0 +1,199 @@
+@import "./var.scss";
+
+body{
+  background: $bg-grey;
+}
+
+/* ios滚动条滑动 */
+.flex-column{
+  display: flex;
+  align-items: center;
+}
+.from-reset,.from-reset:hover,.from-reset:active{
+  outline: none;
+  border:0;
+}
+.from-suffix{
+  position: relative;
+}
+.from-suffix::after{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  border: 5px solid transparent;
+  border-bottom-color: #ddd;
+  content: ' ';
+}
+.overflow-h{  overflow: hidden;  }
+.overflow-s{ overflow:scroll; }
+.left{  float: left;   }
+.right{   float: right;   }
+.text-overflow{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.fix-more-icon{
+  width: 8px;
+  height: 8px;
+  border-color: #cbcbcb;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  content: "";
+  vertical-align: top;
+  transform: rotate(45deg);
+  box-sizing: inherit;
+}
+.clear::after{
+  content: " ";
+  display: table;
+  clear: both;
+}
+.footer-btn{
+  width: 100%;
+  margin-top: 20px;
+}
+.noscript{
+  margin-top: 5rem;
+  text-align: center;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s ease;
+}
+.slide-fade-enter
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-leave-to{
+  opacity: 0;
+}
+
+/* font style  */
+.fs-grey{
+  font-size: 12px;
+  color: $font-color-grey;
+}
+
+/* global select style hack */
+.v-select{
+  .dropdown-toggle{
+    padding: 3px 0;
+    border: none !important;
+    border-bottom: 1px solid $border-color-grey !important;
+  }
+   .clear{
+    display: none !important;
+  }
+   .open-indicator:before{
+     border-color: #cbcbcb !important;
+     height: 12px !important;
+     border-width: 1px 1px 0 0 !important;
+     width: 12px !important;
+  }
+   .open-indicator, .v-select .open-indicator:before{
+    width: 12px !important;
+  }
+   .dropdown-menu > .highlight > a {
+    background: $theme-color !important;
+    color: #fff;
+  }
+   a {
+    text-decoration: none !important;
+   }
+   .dropdown-menu .active > a {
+    color: #333;
+    background: rgba(50, 50, 50, .1);
+  }
+
+}
+
+.svg-icon-transform{
+  margin-right: 5px;
+}
+
+/*
+  贷款帐户与缴存帐户 共公
+*/
+.depositedAccount-list{
+  color: #333;
+}
+.depositedAccount-item-header,
+.depositedAccount-item-sec,
+.depositedAccount-item-footer{
+  padding: 10px 0;
+}
+
+.depositedAccount-item-header{
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+.depositedAccount-item-sec{
+  display: flex;
+  border: 1px solid $border-color-grey-tint;
+  border-left: none;
+  border-right: none;
+  >[data-type='content']{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    flex: 1;
+    > span {
+      font-size: 12px;
+      color: #999;
+      transform: scale(.8);
+    }
+    > strong {
+      font-size: 18px;
+      max-width:100%;
+    }
+  }
+  >[data-type='content']:first-child{
+    border-right: 1px solid $border-color-grey-tint;
+  }
+}
+.depositedAccount-item-footer{
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $theme-color;
+  > div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  .svg-icon-transform{
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.depositedAccount-item{
+  margin-bottom:10px;
+  background: #fff;
+  > div{ padding: 0 10px;  }
+  .btn{
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: $list-font-color;
+    background: $list-font-bg;
+    line-height: 1;
+  }
+  .btn[data-type='disabled']{
+    background: #f5f5f5;
+    color: #989898;
+  }
+}

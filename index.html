@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> 饿了么测试 </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--禁止ios把长串数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection" />
+    <!--禁止识别为邮箱1-->
+    <meta content="email=no" name="format-detection" />
+    <script type="text/javascript">
+      (function flexible (window, document) {
+        var docEl = document.documentElement
+        var dpr = window.devicePixelRatio || 1
+
+        // set 1rem = viewWidth / 10
+        function setRemUnit () {
+          var rem = docEl.clientWidth / 10
+          docEl.style.fontSize = rem + 'px'
+        }
+
+        setRemUnit()
+
+        // reset rem unit on page resize
+        window.addEventListener('resize', setRemUnit)
+        window.addEventListener('pageshow', function (e) {
+          if (e.persisted) {
+            setRemUnit()
+          }
+        })
+
+        // detect 0.5px supports
+        if (dpr >= 2) {
+          var fakeBody = document.createElement('body')
+          var testElement = document.createElement('div')
+          testElement.style.border = '.5px solid transparent'
+          fakeBody.appendChild(testElement)
+          docEl.appendChild(fakeBody)
+          if (testElement.offsetHeight === 1) {
+            docEl.classList.add('hairlines')
+          }
+          docEl.removeChild(fakeBody)
+        }
+      }(window, document))
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <noscript>
+      您的浏览器不支持JavaScript,清修改设置或使用其他设备浏览.
+    </noscript>
+  </body>
+</html>
